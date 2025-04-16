@@ -6,7 +6,8 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = request.build_absolute_uri('/')
+    # Use the codespace URL instead of build_absolute_uri to avoid HTTPS issues
+    base_url = 'https://build-w-copilot-agent-8000.app.github.dev/'
     return Response({
         'users': base_url + 'api/users/',
         'teams': base_url + 'api/teams/',

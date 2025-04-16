@@ -25,8 +25,8 @@ SECRET_KEY = 'your-secret-key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Allow all hosts
-ALLOWED_HOSTS = ['*']
+# Allow all hosts and specifically list our codespace URL and localhost
+ALLOWED_HOSTS = ['*', 'build-w-copilot-agent-8000.app.github.dev', 'localhost']
 
 
 # Application definition
