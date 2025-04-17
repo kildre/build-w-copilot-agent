@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API from '../config/api';
 
 function Teams() {
   const [teams, setTeams] = useState([]);
@@ -6,7 +7,7 @@ function Teams() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://build-w-copilot-agent-8000.app.github.dev/api/teams/')
+    fetch(`${API.baseUrl}${API.endpoints.teams}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
